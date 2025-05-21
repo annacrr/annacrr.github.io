@@ -6,7 +6,7 @@ permalink: /projects/bikes/
 
 # Bike Rental Analysis
 
-<!DOCTYPE html>
+
 
 <html lang="en">
 <head><meta charset="utf-8"/>
