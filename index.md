@@ -1,9 +1,7 @@
----
-layout: default
-title: Welcome
----
-
-# Welcome to My Portfolio
-
-This website showcases my data analysis projects and work.  
-Explore each project to learn more about my skills and findings.
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Hello World</h1>
+<p>I'm hosted with GitHub Pages.</p>
+</body>
+</html>
