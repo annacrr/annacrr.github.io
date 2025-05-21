@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "Bike Rental Analysis"
-date: 2024-05-21
-description: "Analysis of bike rentals by weather, time, and season."
+description: "A data analysis project exploring bike rentals and weather patterns"
 ---
 
 <!DOCTYPE html>
