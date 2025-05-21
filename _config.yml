@@ -1,4 +1,11 @@
-theme: jekyll-theme-minimal
 title: Anna Carolina Corrêa
 description: My projects' portfolio
+author: Anna Carolina Corrêa
+theme: jekyll-theme-minimal
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
 
