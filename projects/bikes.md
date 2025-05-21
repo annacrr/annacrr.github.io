@@ -1,8 +1,10 @@
 ---
-layout: post
+layout: page
 title: "Bike Rental Analysis"
-description: "A data analysis project exploring bike rentals and weather patterns"
+permalink: /projects/bikes/
 ---
+
+# Bike Rental Analysis
 
 <!DOCTYPE html>
 
