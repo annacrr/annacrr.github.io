@@ -1,3 +1,6 @@
 title: Anna Carolina Corrêa
 description: My projects' portfolio
+author: Anna Carolina Corrêa
 theme: bencentra/centrarium
+url: "https://annacrr.github.io"
+baseurl: ""  # Leave empty if deploying at root domain
