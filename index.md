@@ -11,7 +11,7 @@ And the best part? I’ll make it look cool.
 
 ## Recent Projects
 
-### [🚲 Bike Rental Analysis](./projects/bikes)
+### [🚲 Bike Rental Analysis](./projects/bikes1)
 
 **📝Topic:** Exploring bike rental demand and seasonality  
 **⌨️Tools:** Python, pandas, seaborn, data visualization  
