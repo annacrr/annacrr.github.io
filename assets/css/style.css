@@ -1,8 +1,10 @@
 ---
 ---
+
 @import "{{ site.theme }}";
 
-main {
+
+body {
   display: flex;
   justify-content: center;
 }
