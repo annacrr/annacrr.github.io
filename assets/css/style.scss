@@ -2,7 +2,6 @@
 ---
 @import "{{ site.theme }}";
 
-/* Layout geral */
 main {
   display: flex;
   justify-content: center;
@@ -10,10 +9,10 @@ main {
 
 .wrapper {
   display: flex;
+  max-width: 1200px;
   width: 100%;
-  max-width: 1400px;
-  margin: 0;
-  padding: 2rem 3rem;
+  margin: 0 auto;
+  padding: 2rem;
   box-sizing: border-box;
 }
 
@@ -22,11 +21,12 @@ header {
   top: auto !important;
   left: auto !important;
   right: auto !important;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
+section {
+  flex-grow: 1;
+  max-width: 100%;
+}
 
 header img {
   max-width: 100%;
