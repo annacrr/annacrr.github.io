@@ -47,13 +47,27 @@ section {
   max-width: 100% !important;
 }
 
-.output {
+.output_area {
   overflow-x: auto;
   max-width: 100%;
 }
 
-.output table {
-  display: table;
+.output_area table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+div.output_html {
+  overflow-x: auto;
+}
+
+div.output_subarea {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.output_subarea table {
   width: 100%;
   table-layout: auto;
   word-wrap: break-word;
