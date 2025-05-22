@@ -7,6 +7,8 @@ My special skill and aspiration is transforming data into human-centered, action
 
 And the best part? I’ll make it look cool. 
 
+<hr style="border: none; height: 1px; background-color: #ccc; margin: 40px 0;" />
+
 ## Recent Projects
 
 ### [🚲 Bike Rental Analysis](./projects/bikes)
