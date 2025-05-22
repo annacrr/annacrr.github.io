@@ -11,6 +11,8 @@ permalink: /projects/bikes/
 </div>
 
 
+
+
 <div style="width: 100vw; height: 280px; overflow: hidden; margin: 0 auto;">
   <img src="/assets/img/bike-banner.jpg" alt="Bike Banner" style="width: 100%; object-fit: cover; object-position: center; height: 100%; display: block;" />
 </div>
