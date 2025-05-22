@@ -46,16 +46,3 @@ section {
   flex-grow: 1 !important;
   max-width: 100% !important;
 }
-
-/* Só adiciona rolagem horizontal sem interferir na estrutura da tabela */
-section {
-  overflow-x: auto;
-}
-
-section table {
-  width: 100%;
-  max-width: 100%;
-  table-layout: auto;
-  border-collapse: collapse;
-}
-
