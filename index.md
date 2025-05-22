@@ -1,10 +1,7 @@
 
-# Welcome to My Portfolio 👋
+# Anna's Portfolio
 
-Hi, I'm Anna Carolina Corrêa.  
-This is my data science portfolio.  
-Here, you'll find my latest projects, analysis, and Python work.  
-More updates coming soon!
+I’m a Brazilian, chronically online marketer. My special skill and aspiration is transforming data into human-centered, actionable strategies that will differentiate a company from the millions of others in the Bay Area. And the best part? I’ll make it look cool. 
 
 ## Recent Projects
 
