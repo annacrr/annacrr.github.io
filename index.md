@@ -3,6 +3,8 @@ layout: default
 title: Welcome
 ---
 
+![Profile picture](profile.jpeg)
+
 _Data Analyst & Python Developer_  
 📍 San Francisco, USA  
 ✉️ [annaccorrea1@hotmail.com](mailto:annaccorrea1@hotmail.com)  
