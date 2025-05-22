@@ -1,3 +1,9 @@
+<a href="{{ "/" | relative_url }}" style="text-decoration: none;">
+  <h1 style="font-size: 22px; margin-bottom: 10px; color: #333; text-align: center;">
+    Anna’s Portfolio
+  </h1>
+</a>
+
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
