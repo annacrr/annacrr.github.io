@@ -3,6 +3,8 @@ description: My projects' portfolio
 author: Anna Carolina Corrêa
 theme: jekyll-theme-minimal
 
+logo: /assets/img/profile.png
+
 collections:
   projects:
     output: true
