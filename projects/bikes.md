@@ -12,18 +12,6 @@
 </div>
 
 
-
-
-<div style="width: 100vw; height: 280px; overflow: hidden; margin: 0 auto;">
-  <img src="/assets/img/bike-banner.jpg" alt="Bike Banner" style="width: 100%; object-fit: cover; object-position: center; height: 100%; display: block;" />
-</div>
-
-
-
-<html lang="en">
-<head><meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>index</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
