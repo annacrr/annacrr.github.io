@@ -3,6 +3,31 @@ layout: default
 title: Bike Rental Analysis
 ---
 
+<style>
+/* Corrige o layout espremido mantendo a sidebar */
+.wrapper {
+  max-width: 1600px !important;
+  width: 100% !important;
+  display: flex !important;
+  margin: 0 auto;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+section {
+  flex-grow: 1 !important;
+  max-width: 100% !important;
+  overflow-x: auto;
+}
+
+header {
+  width: 240px !important;
+  flex-shrink: 0 !important;
+  margin-right: 32px !important;
+}
+</style>
+
+
 <div class='notebook-container'>
 
 <main>
