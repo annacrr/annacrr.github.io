@@ -47,11 +47,14 @@ section {
   max-width: 100% !important;
 }
 
-/* Faz tabelas grandes se expandirem e não quebrar layout */
+.output {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
 .output table {
   display: table;
   width: 100%;
-  overflow-x: auto;
   table-layout: auto;
   word-wrap: break-word;
 }
