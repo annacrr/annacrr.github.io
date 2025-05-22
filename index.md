@@ -2,7 +2,7 @@
 
 ## Hi, I'm Anna
 
-<div style="background-color: #f5e7fc; padding: 20px; border-radius: 10px; margin-bottom: 30px;">
+<div style="background-color: #f9f1fe; padding: 20px; border-radius: 10px; margin-bottom: 30px;">
 I’m a Brazilian, chronically online marketer.  
 My special skill and aspiration is transforming data into human-centered, actionable strategies that will differentiate a company from the millions of others in the Bay Area.  
 And the best part? <strong>I’ll make it look cool</strong>.
