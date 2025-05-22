@@ -8,8 +8,3 @@ email: annaccorrea1@hotmail.com
 location: San Francisco, USA
 linkedin_username: annaccorrea
 github_username: annacrr
-
-collections:
-  projects:
-    output: true
-    permalink: /projects/:name/
