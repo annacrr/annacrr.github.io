@@ -1,0 +1,12 @@
+.wrapper {
+  max-width: 1100px; /* default is around 800px */
+}
+
+header {
+  width: 220px; /* make sidebar narrower if needed */
+  padding-right: 30px;
+}
+
+section {
+  width: calc(100% - 240px); /* adjust to match header width + spacing */
+}
