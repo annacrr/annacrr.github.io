@@ -4,6 +4,10 @@ title: "Bike Rental Analysis"
 permalink: /projects/bikes/
 ---
 
+<div style="background: white; padding: 20px 0; text-align: center; font-size: 26px; font-weight: 600; color: #4a4a4a; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+  Anna Carolina Corrêa
+</div>
+
 <div style="text-align: center; margin-bottom: 30px;">
   <img src="/assets/img/bike-banner.jpg" alt="Banner for Bike Rental Analysis" style="width: 100%; max-width: 950px; height: auto; border-radius: 6px; box-shadow: 0 0 6px rgba(0,0,0,0.15);">
 </div>
