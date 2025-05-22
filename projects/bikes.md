@@ -5,7 +5,7 @@
 
 <head>
 
-<div style="background: white; padding: 30px 40px 0px 60px; text-align: left;">
+<div style="background: white; padding: 20px 30px 0px 50px; text-align: left;">
 </div>
 
 
