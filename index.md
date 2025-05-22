@@ -3,7 +3,7 @@ layout: default
 title: Welcome
 ---
 
-![Profile picture](profile.jpeg)
+<img src="assets/profile.jpeg" alt="Profile picture" width="80" style="border-radius: 50%;">
 
 _Data Analyst & Python Developer_  
 📍 San Francisco, USA  
