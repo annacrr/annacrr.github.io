@@ -9,7 +9,9 @@ And the best part? I’ll make it look cool.
 
 <hr style="border: none; height: 1px; background-color: #ccc; margin: 40px 0;" />
 
-## Recent Projects
+********
+
+# Projects
 
 ### [🚲 Bike Rental Analysis](./project/bikes)
 
