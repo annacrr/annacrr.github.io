@@ -4,7 +4,7 @@
 @import "{{ site.theme }}";
 
 
-main {
+body {
   display: flex;
   justify-content: center;
 }
@@ -25,7 +25,7 @@ section {
 
 
 header {
-  width: 260px !important;
+  width: 280px !important;
   flex-shrink: 0 !important;
   margin-right: 40px !important;
   margin-left: 0 !important;
