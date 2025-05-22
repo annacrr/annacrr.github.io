@@ -1,8 +1,9 @@
 ---
-layout: page
-title: "Bike Rental Analysis"
-permalink: /projects/bikes/
 ---
+
+@import "{{ site.theme }}";
+
+
 
 <div style="background: white; padding: 30px 40px 0px 60px; text-align: left;">
   <h1 style="margin: 0 0 40px 0; font-size: 28px; font-weight: 700; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #222;">
