@@ -15,6 +15,7 @@ And the best part? <strong>I’ll make it look cool</strong>.
 
 In this project, we explore what drives people to rent bikes by looking at patterns in time, weather, and holidays. Using visual tools like boxplots and heatmaps, we uncover trends and insights that can help improve operations and better meet customer needs.
 
-<div style="margin-top: 30px;"></div>
+<div style="margin-top: 30px;">
 
 ･:.｡. .｡.:･゜ﾟ･☆･:.｡. .｡.:･゜ﾟ･☆･:.｡. .｡.:･゜ﾟ･☆･:.｡. .｡.:･゜ﾟ･☆･:.｡. .｡.:･゜ﾟ･☆･:.｡. .｡.:･゜ﾟ･☆･:.｡. .｡.:･゜ﾟ･☆･:.｡. .｡.:･゜ﾟ･☆･:.｡. .｡.:･゜ﾟ･☆･:.｡. .｡.:･゜ﾟ･☆･:.｡. .｡.:･゜ﾟ･☆･:
+</div>
