@@ -1,14 +1,14 @@
 title: Anna Carolina Corrêa
 description: My projects' portfolio
 author: Anna Carolina Corrêa
-theme: jekyll-theme-minimal
-
-collections:
-  projects:
-    output: true
-    permalink: /projects/:name/
+remote_theme: pages-themes/minimal@v0.2.0
 
 email: annaccorrea1@hotmail.com
 location: San Francisco, USA
 linkedin_username: annaccorrea
 github_username: annacrr
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
