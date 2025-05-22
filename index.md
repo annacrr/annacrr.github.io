@@ -1,3 +1,5 @@
+<!-- Homepage Banner -->
+<img src="/assets/img/homepage-banner.png" alt="Homepage Banner" style="width: 100%; height: 220px; object-fit: cover; display: block; margin-bottom: 30px;" />
 
 # Anna's Portfolio
 
