@@ -1,14 +1,16 @@
 ---
 ---
 
-.wrapper {
-  width:100px;
-  margin:0 auto;
-}
 
+@import "{{ site.theme }}";
+
+.wrapper {
+    width:1110px;
+    margin:0 auto;
+  }
 
 section {
-  width:100px;
-  float:right;
-  padding-bottom:50px;
-}
+    width:750px;
+    float:right;
+    padding-bottom:50px;
+  }
