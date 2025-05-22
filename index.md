@@ -3,8 +3,6 @@ layout: default
 title: Welcome
 ---
 
-<img src="assets/profile.jpeg" alt="Profile picture" width="80" style="border-radius: 50%;">
-
 _Data Analyst & Python Developer_  
 📍 San Francisco, USA  
 ✉️ [annaccorrea1@hotmail.com](mailto:annaccorrea1@hotmail.com)  
