@@ -11,10 +11,10 @@
 
 <style type="text/css">
     pre { line-height: 125%; }
-td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
-span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
-td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
-span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 3px; padding-right: 3px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 3px; padding-right: 3px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 3px; padding-right: 3px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 3px; padding-right: 3px; }
 .highlight .hll { background-color: var(--jp-cell-editor-active-background) }
 .highlight { background: var(--jp-cell-editor-background); color: var(--jp-mirror-editor-variable-color) }
 .highlight .c { color: var(--jp-mirror-editor-comment-color); font-style: italic } /* Comment */
