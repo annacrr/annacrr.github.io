@@ -10,3 +10,12 @@ email: annaccorrea1@hotmail.com
 location: San Francisco, USA
 linkedin: https://www.linkedin.com/in/annaccorrea
 github: https://github.com/annacrr
+
+sass:
+  style: compressed
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
