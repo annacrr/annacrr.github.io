@@ -48,10 +48,10 @@ section {
 }
 
 /* Faz tabelas grandes se expandirem e não quebrar layout */
-section table {
+.output table {
+  display: table;
   width: 100%;
-  max-width: 100%;
   overflow-x: auto;
-  display: block;
-  word-break: break-word;
+  table-layout: auto;
+  word-wrap: break-word;
 }
