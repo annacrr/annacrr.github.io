@@ -4,8 +4,10 @@ title: "Bike Rental Analysis"
 permalink: /projects/bikes/
 ---
 
-<div style="background: white; padding: 20px 0; text-align: center; font-size: 28px; font-weight: 700; color: #222; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
-  Anna Carolina Corrêa
+<div style="background: white; padding: 30px 40px 0px 60px; text-align: left;">
+  <h1 style="margin: 0; font-size: 28px; font-weight: 700; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #222;">
+    Anna Carolina Corrêa
+  </h1>
 </div>
 
 <div style="text-align: center; margin-bottom: 30px;">
