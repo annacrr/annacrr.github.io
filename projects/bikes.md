@@ -4,6 +4,8 @@ title: "Bike Rental Analysis"
 permalink: /projects/bikes/
 ---
 
+![Banner for Bike Rental Analysis](/assets/img/bike-banner.jpg)
+
 # Bike Rental Analysis
 
 
