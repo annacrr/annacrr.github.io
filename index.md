@@ -13,6 +13,6 @@ And the best part? I’ll make it look cool.
 
 ### [🚲 Bike Rental Analysis](./project/bikes)
 
-**📝Topic:** Exploring bike rental demand and seasonality  
-**⌨️Tools:** Python, pandas, seaborn, data visualization  
-**📈Highlights:** Hourly demand patterns, ideal weather conditions, strategic insights for rentals  
+In this project, we explore what drives people to rent bikes by looking at patterns in time, weather, and holidays. Using visual tools like boxplots and heatmaps, we uncover trends and insights that can help improve operations and better meet customer needs.
+
+･:.｡. .｡.:･゜ﾟ･☆･:.｡. .｡.:･゜ﾟ･☆･:.｡. .｡.:･゜ﾟ･☆･:.｡. .｡.:･゜ﾟ･☆･:.｡. .｡.:･゜ﾟ･☆･:.｡. .｡.:･゜ﾟ･☆･:.｡. .｡.:･゜ﾟ･☆･:.｡. .｡.:･゜ﾟ･☆･:.｡. .｡.:･゜ﾟ･☆･:.｡. .｡.:･゜ﾟ･☆･:.｡. .｡.:･゜ﾟ･☆･:
