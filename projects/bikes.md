@@ -11,8 +11,8 @@ permalink: /projects/bikes/
 </div>
 
 
-<div style="display: flex; justify-content: flex-start; padding-left: 60px;">
-  <img src="/assets/img/bike-banner.jpg" alt="Bike Rental Banner" style="max-width: 1000px; width: 100%; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+<div style="margin: 0; padding: 0;">
+  <img src="/assets/img/bike-banner.jpg" alt="Bike Rental Banner" style="width: 100vw; max-width: 100%; display: block; margin: 0 auto;" />
 </div>
 
 
