@@ -4,7 +4,9 @@ title: "Bike Rental Analysis"
 permalink: /projects/bikes/
 ---
 
-![Banner for Bike Rental Analysis](/assets/img/bike-banner.jpg)
+<div style="text-align: center; margin-bottom: 30px;">
+  <img src="/assets/img/bike-banner.jpg" alt="Banner for Bike Rental Analysis" style="width: 100%; max-width: 950px; height: auto; border-radius: 6px; box-shadow: 0 0 6px rgba(0,0,0,0.15);">
+</div>
 
 
 
