@@ -1,34 +1,29 @@
 ---
 ---
-
 @import "{{ site.theme }}";
 
-body {
+/* Corrige o layout geral */
+main {
   display: flex;
   justify-content: center;
 }
 
+/* Wrapper ocupa quase toda a largura da tela */
 .wrapper {
   display: flex;
-  max-width: 1200px;
   width: 100%;
-  margin: 0 auto;
-  padding: 2rem;
+  max-width: 1600px;  /* você pode aumentar mais se quiser */
+  margin: 0;
+  padding: 1rem 2rem;  /* reduz o espaço lateral */
   box-sizing: border-box;
 }
 
+/* Sidebar (foto e info) */
 header {
-  width: 280px;
-  flex-shrink: 0;
-  margin-right: 40px;
-}
-
-section {
-  flex-grow: 1;
-  max-width: 100%;
-}
-
-header {
+  width: 260px !important;
+  flex-shrink: 0 !important;
+  margin-right: 30px !important;
+  margin-left: 0 !important;
   position: relative !important;
   top: auto !important;
   left: auto !important;
@@ -39,10 +34,24 @@ header {
 }
 
 header img {
-  width: 250px;
+  width: 240px;
   max-width: 100%;
   height: auto;
   display: block;
   margin-bottom: 1rem;
 }
 
+/* Área principal de conteúdo */
+section {
+  flex-grow: 1 !important;
+  max-width: 100% !important;
+}
+
+/* Faz tabelas grandes se expandirem e não quebrar layout */
+section table {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  display: block;
+  word-break: break-word;
+}
