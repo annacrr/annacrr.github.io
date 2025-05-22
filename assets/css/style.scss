@@ -47,67 +47,15 @@ section {
   max-width: 100% !important;
 }
 
-.output_area {
+/* Só adiciona rolagem horizontal sem interferir na estrutura da tabela */
+section {
   overflow-x: auto;
+}
+
+section table {
+  width: 100%;
   max-width: 100%;
-}
-
-.output_area table {
-  width: 100%;
+  table-layout: auto;
   border-collapse: collapse;
-  table-layout: auto;
 }
 
-div.output_html {
-  overflow-x: auto;
-}
-
-div.output_subarea {
-  max-width: 100%;
-  overflow-x: auto;
-}
-
-.output_subarea table {
-  width: 100%;
-  table-layout: auto;
-  word-wrap: break-word;
-}
-
-/* Corrige a exibição de notebooks exportados (Jupyter) */
-
-.output_area pre,
-.output_area .output_text,
-.output_area .output_subarea,
-.output_html,
-.output_area table {
-  all: unset;
-  display: block;
-  width: 100%;
-  overflow-x: auto;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  font-family: Consolas, Monaco, 'Courier New', monospace;
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-
-.output_area {
-  padding: 1rem;
-  background: #fdfdfd;
-  border: 1px solid #eee;
-  margin-bottom: 2rem;
-  overflow-x: auto;
-}
-
-.output_area table {
-  border-collapse: collapse;
-  width: 100%;
-  table-layout: auto;
-}
-
-.output_area td,
-.output_area th {
-  padding: 6px 10px;
-  border: 1px solid #ddd;
-  text-align: left;
-}
