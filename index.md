@@ -1,7 +1,3 @@
-<!-- Full-width banner -->
-<div style="width: 100%; margin-bottom: 40px;">
-  <img src="/assets/img/home-banner.png" alt="Homepage Banner" style="width: 100%; height: auto;">
-</div>
 
 # Anna's Portfolio
 
