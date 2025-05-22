@@ -2,35 +2,30 @@
 ---
 @import "{{ site.theme }}";
 
-/* Corrige o layout geral */
+/* Layout geral */
 main {
   display: flex;
   justify-content: center;
 }
 
-/* Wrapper ocupa quase toda a largura da tela */
 .wrapper {
   display: flex;
   width: 100%;
-  max-width: 1600px;  /* você pode aumentar mais se quiser */
+  max-width: 1400px;
   margin: 0;
-  padding: 1rem 2rem;  /* reduz o espaço lateral */
+  padding: 2rem 3rem;
   box-sizing: border-box;
 }
 
-/* Sidebar (foto e info) */
+/* Sidebar */
 header {
   width: 260px !important;
   flex-shrink: 0 !important;
-  margin-right: 30px !important;
-  margin-left: 0 !important;
-  position: relative !important;
-  top: auto !important;
-  left: auto !important;
-  right: auto !important;
+  margin-right: 40px !important;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative !important;
 }
 
 header img {
@@ -41,8 +36,4 @@ header img {
   margin-bottom: 1rem;
 }
 
-/* Área principal de conteúdo */
-section {
-  flex-grow: 1 !important;
-  max-width: 100% !important;
-}
+/* NÃO ADICIONE section table AQUI! */
