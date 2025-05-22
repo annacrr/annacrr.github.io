@@ -1,0 +1,17 @@
+/* Override minimal theme layout width */
+.wrapper {
+  max-width: 1200px; /* Was 800px */
+  margin: 0 auto;
+  display: flex;
+  gap: 50px;
+}
+
+/* Sidebar width */
+header {
+  flex: 0 0 240px; /* Adjust this for sidebar width */
+}
+
+/* Main content */
+section {
+  flex: 1;
+}
