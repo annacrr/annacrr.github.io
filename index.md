@@ -3,6 +3,18 @@ layout: default
 title: Welcome
 ---
 
+# Anna Carolina Corrêa
+
+_Data Analyst & Python Developer_  
+📍 San Francisco, USA  
+✉️ [annaccorrea1@hotmail.com](mailto:annaccorrea1@hotmail.com)  
+🔗 [LinkedIn](https://www.linkedin.com/in/annaccorrea/)  
+🐙 [GitHub](https://github.com/annacrr)
+
+---
+
+Welcome to my portfolio! Below are some of the projects I’ve worked on:
+
 # Welcome to My Portfolio 👋
 
 Hi, I'm Anna Carolina Corrêa.  
