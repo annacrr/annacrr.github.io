@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: "Bike Rental Analysis"
 permalink: /projects/bikes/
 ---
