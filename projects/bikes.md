@@ -3,7 +3,7 @@
 
 
 
-
+<head>
 
 <div style="background: white; padding: 30px 40px 0px 60px; text-align: left;">
 </div>
