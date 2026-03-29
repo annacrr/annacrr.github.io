@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anna Correa.exe — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Space+Grotesk:wght@400;500;600;700&family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --purple:    #7B4FD4;
+    --purple-lt: #C4A8F5;
+    --purple-dk: #3B2080;
+    --purple-xlt:#EDE6FF;
+    --blue:      #2D4BFF;
+    --blue-lt:   #A0B0FF;
+    --yellow:    #FFD700;
+    --yellow-lt: #FFF3A0;
+    --red:       #E8213A;
+    --white:     #FFFFFF;
+    --off-white: #F5F3FF;
+    --ink:       #1A0A3B;
+    --mid:       #5A4880;
+    --win-bar:   linear-gradient(90deg, #6030C8 0%, #A060F8 50%, #6030C8 100%);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Space Grotesk', sans-serif;
+    background: var(--off-white);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 9999;
+    background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.018) 3px, rgba(0,0,0,0.018) 4px);
+    pointer-events: none;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    background: var(--purple-dk);
+    border-bottom: 3px solid var(--yellow);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2rem; height: 46px;
+  }
+  .nav-start {
+    display: flex; align-items: center; gap: 0.5rem;
+    background: var(--purple); border: 2px solid rgba(255,255,255,0.3); border-radius: 3px;
+    padding: 0.2rem 0.8rem;
+    font-family: 'VT323', monospace; font-size: 1.2rem;
+    color: var(--yellow); letter-spacing: 0.05em; text-decoration: none;
+    transition: background 0.15s;
+  }
+  .nav-start:hover { background: var(--blue); }
+  .nav-links { display: flex; gap: 0.2rem; }
+  .nav-tab {
+    padding: 0.25rem 0.85rem;
+    border: 1px solid rgba(255,255,255,0.2); border-radius: 2px;
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
+    color: var(--white); text-decoration: none;
+    transition: background 0.15s;
+  }
+  .nav-tab:hover { background: rgba(255,255,255,0.15); }
+  .nav-clock {
+    font-family: 'VT323', monospace; font-size: 1.1rem; color: var(--purple-lt);
+    border: 1px solid rgba(255,255,255,0.2); padding: 0.1rem 0.5rem; border-radius: 2px;
+    background: rgba(0,0,0,0.2); letter-spacing: 0.08em;
+  }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh; padding: 5rem 3rem 3rem;
+    background: var(--purple-xlt);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+    position: relative; overflow: hidden;
+  }
+  #hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(123,79,212,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(123,79,212,0.15) 1px, transparent 1px);
+    background-size: 40px 40px; pointer-events: none;
+  }
+  .hero-left { position: relative; z-index: 2; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--yellow); color: var(--ink);
+    border: 2px solid var(--ink); border-radius: 3px;
+    padding: 0.2rem 0.8rem; margin-bottom: 1.5rem;
+    font-family: 'VT323', monospace; font-size: 1.1rem; letter-spacing: 0.07em;
+    box-shadow: 3px 3px 0 var(--ink);
+    animation: fadeUp 0.5s ease both;
+  }
+  .blink { animation: blink 1.1s step-end infinite; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 700;
+    line-height: 0.95; letter-spacing: -0.025em;
+    animation: fadeUp 0.5s 0.1s ease both;
+  }
+  .h1-outline { -webkit-text-stroke: 2.5px var(--ink); color: transparent; }
+  .h1-purple { color: var(--purple); }
+  .h1-blue   { color: var(--blue); }
+
+  .hero-sub {
+    font-size: 1rem; line-height: 1.75; color: var(--mid);
+    margin-top: 1.2rem; max-width: 420px;
+    animation: fadeUp 0.5s 0.2s ease both;
+  }
+  .hero-sub strong { color: var(--purple); }
+
+  .hero-btns { display: flex; gap: 0.7rem; margin-top: 1.8rem; flex-wrap: wrap; animation: fadeUp 0.5s 0.3s ease both; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    padding: 0.6rem 1.3rem; border: 2px solid var(--ink); border-radius: 3px;
+    font-family: 'Space Grotesk', sans-serif; font-size: 0.82rem; font-weight: 700;
+    letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none;
+    box-shadow: 3px 3px 0 var(--ink);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .btn:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 var(--ink); }
+  .btn-a { background: var(--purple); color: var(--white); }
+  .btn-b { background: var(--yellow); color: var(--ink); }
+  .btn-c { background: var(--white); color: var(--ink); }
+
+  /* Hero right */
+  .hero-right { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 0.9rem; animation: fadeUp 0.5s 0.15s ease both; }
+  .stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+  .stat-win {
+    border: 2px solid var(--ink); border-radius: 4px;
+    background: var(--white); box-shadow: 3px 3px 0 var(--ink); overflow: hidden;
+  }
+  .sbar { padding: 0.2rem 0.6rem; font-family: 'VT323', monospace; font-size: 0.9rem; letter-spacing: 0.05em; }
+  .sbar-p { background: var(--purple); color: var(--white); }
+  .sbar-b { background: var(--blue); color: var(--white); }
+  .sbar-y { background: #A06000; color: var(--yellow); }
+  .sbar-r { background: var(--red); color: var(--white); }
+  .sbody { padding: 0.65rem 0.8rem; }
+  .snum { font-family: 'VT323', monospace; font-size: 2.2rem; line-height: 1; color: var(--purple); }
+  .slbl { font-size: 0.7rem; font-weight: 600; color: var(--mid); text-transform: uppercase; letter-spacing: 0.06em; }
+
+  .tools-bar {
+    border: 2px solid var(--ink); border-radius: 4px;
+    background: var(--ink); padding: 0.8rem 1rem;
+    display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center;
+    box-shadow: 3px 3px 0 var(--purple);
+  }
+  .ttag {
+    font-family: 'VT323', monospace; font-size: 0.95rem; letter-spacing: 0.04em;
+    background: rgba(255,255,255,0.07); color: var(--purple-lt);
+    border: 1px solid rgba(255,255,255,0.12); padding: 0.1rem 0.45rem; border-radius: 2px;
+  }
+  .ttag.y { color: var(--yellow); }
+
+  /* Float stars */
+  .fstar {
+    position: absolute; font-family: 'VT323', monospace;
+    font-size: 1.5rem; color: var(--yellow); opacity: 0.55; pointer-events: none;
+    animation: flt 4s ease-in-out infinite;
+  }
+  @keyframes flt { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+  /* SECTION BASE */
+  .sec { padding: 5rem 3rem; }
+  .sec-hdr {
+    display: flex; align-items: baseline; gap: 1rem;
+    border-bottom: 2px solid var(--ink); padding-bottom: 0.75rem; margin-bottom: 2.5rem;
+  }
+  .sec-id { font-family: 'VT323', monospace; font-size: 1rem; color: var(--purple); letter-spacing: 0.1em; }
+  h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 700;
+    letter-spacing: -0.02em; line-height: 1.1;
+  }
+
+  /* ABOUT */
+  #about { background: var(--ink); }
+  #about .sec-hdr { border-color: rgba(196,168,245,0.3); }
+  #about .sec-id { color: var(--yellow); }
+  #about h2 { color: var(--white); }
+  .about-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 3rem; align-items: start; }
+  .about-txt { color: #C8B8F0; font-size: 0.95rem; line-height: 1.8; }
+  .about-txt p+p { margin-top: 1rem; }
+  .about-txt strong { color: var(--purple-lt); }
+  .facts { display: flex; flex-direction: column; gap: 0.75rem; }
+  .fact {
+    border: 1px solid rgba(196,168,245,0.2); border-radius: 3px;
+    padding: 0.85rem 1rem; background: rgba(255,255,255,0.04);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .fact:hover { border-color: var(--purple-lt); background: rgba(255,255,255,0.07); }
+  .flbl { font-family: 'VT323', monospace; font-size: 1rem; color: var(--yellow); letter-spacing: 0.07em; margin-bottom: 0.3rem; }
+  .fval { font-size: 0.82rem; color: #A898C8; line-height: 1.5; }
+
+  /* PROJECTS */
+  #projects { background: var(--off-white); }
+  .proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+  .pc {
+    border: 2px solid var(--ink); border-radius: 4px;
+    background: var(--white); box-shadow: 4px 4px 0 var(--ink);
+    overflow: hidden; display: flex; flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .pc:hover { transform: translate(-3px,-3px); box-shadow: 7px 7px 0 var(--ink); }
+  .pbar { padding: 0.25rem 0.65rem; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+  .pbar-t { font-family: 'VT323', monospace; font-size: 0.9rem; color: var(--white); letter-spacing: 0.04em; }
+  .pbar-x { font-family: 'VT323', monospace; font-size: 0.95rem; color: rgba(255,255,255,0.65); }
+  .pthumb {
+    height: 115px; display: flex; align-items: center; justify-content: center;
+    font-family: 'VT323', monospace; font-size: 1.45rem; letter-spacing: 0.02em;
+    text-align: center; padding: 1rem; line-height: 1.2;
+    border-bottom: 2px solid var(--ink); flex-shrink: 0;
+  }
+  .pbody { padding: 0.95rem 1rem; flex: 1; display: flex; flex-direction: column; gap: 0.55rem; }
+  .ptitle { font-size: 0.85rem; font-weight: 700; line-height: 1.3; }
+  .pdesc { font-size: 0.78rem; line-height: 1.6; color: var(--mid); flex: 1; }
+  .ptags { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+  .ptag {
+    font-family: 'VT323', monospace; font-size: 0.85rem; letter-spacing: 0.04em;
+    padding: 0.08rem 0.45rem; border-radius: 2px;
+    border: 1.5px solid var(--ink);
+    background: var(--purple-xlt); color: var(--purple-dk);
+  }
+  .pc.feat { grid-column: span 2; flex-direction: row; }
+  .pc.feat .pthumb { width: 210px; min-width: 210px; height: auto; border-bottom: none; border-right: 2px solid var(--ink); }
+
+  /* SKILLS */
+  #skills { background: var(--purple-xlt); }
+  .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
+  .sk {
+    border: 2px solid var(--ink); border-radius: 3px; padding: 0.85rem 0.75rem;
+    text-align: center; display: flex; flex-direction: column; gap: 0.35rem;
+    box-shadow: 3px 3px 0 var(--ink);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .sk:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 var(--ink); }
+  .sk-n { font-size: 0.8rem; font-weight: 700; line-height: 1.2; }
+  .sk-l { font-family: 'VT323', monospace; font-size: 0.85rem; letter-spacing: 0.06em; }
+  .lp { background: var(--purple); color: var(--white); }
+  .la { background: var(--blue); color: var(--white); }
+  .li { background: var(--yellow-lt); color: var(--ink); }
+  .lp .sk-l { color: var(--yellow); }
+  .la .sk-l { color: var(--blue-lt); }
+  .li .sk-l { color: var(--mid); }
+  .legend { display: flex; gap: 1rem; margin-bottom: 1.1rem; flex-wrap: wrap; }
+  .lgd { display: flex; align-items: center; gap: 0.4rem; font-size: 0.72rem; font-weight: 600; color: var(--mid); }
+  .lgd-dot { width: 11px; height: 11px; border: 1.5px solid var(--ink); border-radius: 2px; }
+
+  /* EXPERIENCE */
+  #experience { background: var(--off-white); }
+  .exp-list { display: flex; flex-direction: column; gap: 1rem; }
+  .ec {
+    border: 2px solid var(--ink); border-radius: 4px;
+    background: var(--white); box-shadow: 4px 4px 0 var(--ink);
+    display: grid; grid-template-columns: 190px 1fr; overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .ec:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 var(--ink); }
+  .ec-side {
+    background: var(--purple); padding: 1.1rem 1rem;
+    display: flex; flex-direction: column; justify-content: center; gap: 0.35rem;
+    border-right: 2px solid var(--ink);
+  }
+  .ec-co { font-family: 'VT323', monospace; font-size: 1.25rem; color: var(--yellow); letter-spacing: 0.04em; line-height: 1.1; }
+  .ec-pd { font-size: 0.68rem; font-weight: 600; color: var(--purple-lt); letter-spacing: 0.08em; text-transform: uppercase; }
+  .ec-main { padding: 1.1rem 1.3rem; }
+  .ec-role { font-size: 0.92rem; font-weight: 700; margin-bottom: 0.45rem; }
+  .ec-desc { font-size: 0.8rem; line-height: 1.7; color: var(--mid); }
+
+  /* EDUCATION */
+  #education { background: var(--ink); }
+  #education .sec-hdr { border-color: rgba(196,168,245,0.25); }
+  #education .sec-id { color: var(--yellow); }
+  #education h2 { color: var(--white); }
+  .edu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; }
+  .edu {
+    border: 2px solid var(--purple-lt); border-radius: 4px; overflow: hidden;
+    box-shadow: 4px 4px 0 var(--purple);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .edu:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 var(--purple-lt); }
+  .edu-bar { background: var(--purple); padding: 0.25rem 0.75rem; font-family: 'VT323', monospace; font-size: 0.95rem; color: var(--yellow); letter-spacing: 0.06em; }
+  .edu-bd { background: rgba(255,255,255,0.04); padding: 0.95rem 1rem; }
+  .edu-yr { font-family: 'VT323', monospace; font-size: 1.5rem; color: var(--purple-lt); }
+  .edu-sc { font-size: 0.85rem; font-weight: 700; color: var(--white); margin: 0.25rem 0 0.2rem; line-height: 1.3; }
+  .edu-dg { font-size: 0.75rem; color: #9888C0; line-height: 1.5; }
+  .edu-bs { display: flex; flex-direction: column; gap: 0.35rem; margin-top: 0.7rem; }
+  .edu-b { font-size: 0.7rem; font-weight: 600; background: rgba(255,215,0,0.1); color: var(--yellow); border: 1px solid rgba(255,215,0,0.25); border-radius: 2px; padding: 0.18rem 0.45rem; }
+
+  /* CONTACT */
+  #contact {
+    background: var(--purple); padding: 5rem 3rem; text-align: center; position: relative; overflow: hidden;
+  }
+  #contact::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: radial-gradient(circle, rgba(255,215,0,0.12) 1px, transparent 1px);
+    background-size: 28px 28px; pointer-events: none;
+  }
+  #contact .sec-hdr { border-color: rgba(255,255,255,0.25); justify-content: center; }
+  #contact .sec-id { color: var(--yellow); }
+  #contact h2 { color: var(--white); }
+  .c-tag { font-size: 1rem; color: var(--purple-lt); margin-bottom: 2.5rem; position: relative; }
+  .c-links { display: flex; justify-content: center; gap: 0.8rem; flex-wrap: wrap; position: relative; }
+  .cbtn {
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    padding: 0.6rem 1.3rem; border: 2px solid var(--white); border-radius: 3px;
+    font-size: 0.82rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+    text-decoration: none; color: var(--white);
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.25);
+    transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+  }
+  .cbtn:hover { transform: translate(-2px,-2px); box-shadow: 5px 5px 0 rgba(0,0,0,0.25); background: rgba(255,255,255,0.12); }
+  .cbtn.prim { background: var(--yellow); color: var(--ink); border-color: var(--ink); }
+  .cbtn.prim:hover { background: var(--white); }
+
+  footer {
+    background: var(--ink); color: #6050A0;
+    padding: 1.4rem 3rem;
+    display: flex; align-items: center; justify-content: space-between;
+    font-family: 'VT323', monospace; font-size: 0.95rem; letter-spacing: 0.06em;
+    border-top: 2px solid var(--purple-dk);
+  }
+  footer span { color: var(--purple-lt); }
+
+  /* Scroll reveal */
+  .rev { opacity: 0; transform: translateY(22px); transition: opacity 0.55s ease, transform 0.55s ease; }
+  .rev.on { opacity: 1; transform: none; }
+
+  @media (max-width: 900px) {
+    nav { padding: 0 1rem; }
+    .nav-links { display: none; }
+    #hero { grid-template-columns: 1fr; padding: 5rem 1.5rem 2.5rem; }
+    .about-grid { grid-template-columns: 1fr; }
+    .ec { grid-template-columns: 1fr; }
+    .ec-side { border-right: none; border-bottom: 2px solid var(--ink); }
+    .skills-grid { grid-template-columns: repeat(2,1fr); }
+    .proj-grid { grid-template-columns: 1fr; }
+    .pc.feat { grid-column: span 1; flex-direction: column; }
+    .pc.feat .pthumb { width: 100%; height: 115px; border-right: none; border-bottom: 2px solid var(--ink); }
+    .edu-grid { grid-template-columns: 1fr; }
+    .sec { padding: 3.5rem 1.5rem; }
+    footer { flex-direction: column; gap: 0.4rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-start" href="#">⊞ Anna.exe</a>
+  <div class="nav-links">
+    <a class="nav-tab" href="#about">About</a>
+    <a class="nav-tab" href="#projects">Projects</a>
+    <a class="nav-tab" href="#skills">Skills</a>
+    <a class="nav-tab" href="#experience">Experience</a>
+    <a class="nav-tab" href="#contact">Contact</a>
+  </div>
+  <div class="nav-clock" id="clk">00:00</div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="fstar" style="top:12%;left:7%;animation-delay:0s;">★</div>
+  <div class="fstar" style="top:28%;right:9%;animation-delay:0.9s;font-size:1.1rem;">✦</div>
+  <div class="fstar" style="bottom:20%;left:46%;animation-delay:1.7s;font-size:1rem;">✧</div>
+  <div class="fstar" style="top:62%;left:11%;animation-delay:2.3s;font-size:0.9rem;color:#E020C0;">♦</div>
+
+  <div class="hero-left">
+    <div class="hero-badge"><span class="blink">█</span> OPEN TO MARKETING &amp; ANALYTICS ROLES</div>
+    <h1>
+      Hi, I'm<br>
+      <span class="h1-purple">Anna</span><br>
+      <span class="h1-outline">Correa.</span>
+    </h1>
+    <p class="hero-sub">
+      Multicultural, data-obsessed <strong>Marketing Analyst</strong> based in San Francisco. I build strategies that are as rigorous as they are human.
+    </p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn btn-a">See my work ↓</a>
+      <a href="Mkt_Analytics_CV.pdf" download class="btn btn-b">Resume ↓</a>
+      <a href="https://linkedin.com/in/annaccorrea" target="_blank" class="btn btn-c">LinkedIn →</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="stat-row">
+      <div class="stat-win">
+        <div class="sbar sbar-p">stats.exe</div>
+        <div class="sbody"><div class="snum">8+</div><div class="slbl">Years experience</div></div>
+      </div>
+      <div class="stat-win">
+        <div class="sbar sbar-b">portfolio.exe</div>
+        <div class="sbody"><div class="snum">10+</div><div class="slbl">Projects shipped</div></div>
+      </div>
+      <div class="stat-win">
+        <div class="sbar sbar-y">degree.exe</div>
+        <div class="sbody"><div class="snum" style="color:var(--blue);font-size:1.6rem;">MSc</div><div class="slbl">Hult SF · Dean's List</div></div>
+      </div>
+      <div class="stat-win">
+        <div class="sbar sbar-r">award.exe</div>
+        <div class="sbody"><div class="snum" style="color:var(--red);">3rd</div><div class="slbl">Expedia Challenge</div></div>
+      </div>
+    </div>
+    <div class="tools-bar">
+      <span class="ttag y">SQL</span>
+      <span class="ttag">Python</span>
+      <span class="ttag y">Tableau</span>
+      <span class="ttag">Looker Studio</span>
+      <span class="ttag">Power BI</span>
+      <span class="ttag y">Google Analytics</span>
+      <span class="ttag">LLM / RAG</span>
+      <span class="ttag">Meta Ads</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ABOUT -->
+<section id="about" class="sec rev">
+  <div class="sec-hdr">
+    <span class="sec-id">C:\ABOUT\anna.txt</span>
+    <h2>Data-driven. Human-centered.</h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-txt">
+      <p>I'm a <strong>Marketing and Data Analyst</strong> with 8+ years of experience across marketing strategy, financial operations, and analytics. I specialize in turning complex data into clear, actionable decisions that drive real business impact.</p>
+      <p>My background spans paid media optimization, KPI reporting, audience segmentation, and go-to-market strategy. I have worked across healthcare, cosmetics, and nonprofit sectors, always bringing the same commitment: find the insight, build the story, make it count.</p>
+      <p>I hold a <strong>Master's in Marketing and Analytics from Hult International Business School</strong> in San Francisco, where I graduated on the Dean's List and placed 3rd in the Expedia Group Business Challenge. I combine that academic foundation with hands-on technical skills in SQL, Python, Tableau, Power BI, and LLM development.</p>
+      <p>Currently seeking <strong>Marketing Analyst, Data Analyst, and Growth roles</strong> in the US, where I can bring both analytical rigor and creative thinking to a team that values both.</p>
+    </div>
+    <div class="facts">
+      <div class="fact"><div class="flbl">★ LOCATION</div><div class="fval">San Francisco Bay Area · Brazilian 🇧🇷 · Bilingual EN/PT</div></div>
+      <div class="fact"><div class="flbl">★ EDUCATION</div><div class="fval">MSc Marketing &amp; Analytics, Hult SF · Dean's List · 3rd place Expedia Business Challenge</div></div>
+      <div class="fact"><div class="flbl">★ WHAT DRIVES ME</div><div class="fval">Solving real problems through research, analytics, and collaborative innovation</div></div>
+      <div class="fact"><div class="flbl">★ CURRENTLY INTO</div><div class="fval">Agentic AI, LLM development, and AI-powered marketing tools</div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PROJECT MODAL OVERLAY -->
+<div id="modal-overlay" style="display:none;position:fixed;inset:0;z-index:500;background:rgba(10,0,30,0.85);overflow-y:auto;padding:2rem 1rem;">
+  <div id="modal-box" style="max-width:760px;margin:0 auto;background:var(--off-white);border:2px solid var(--ink);border-radius:4px;box-shadow:6px 6px 0 var(--purple);overflow:hidden;">
+    <div id="modal-bar" style="padding:0.3rem 0.8rem;display:flex;align-items:center;justify-content:space-between;">
+      <span id="modal-bar-title" style="font-family:'VT323',monospace;font-size:1rem;color:var(--white);letter-spacing:0.05em;"></span>
+      <div style="display:flex;gap:4px;">
+        <div style="width:16px;height:16px;border-radius:2px;background:#FFD700;border:1.5px solid rgba(0,0,0,0.4);"></div>
+        <div style="width:16px;height:16px;border-radius:2px;background:#40C840;border:1.5px solid rgba(0,0,0,0.4);"></div>
+        <div id="modal-close" style="width:16px;height:16px;border-radius:2px;background:#FF4444;border:1.5px solid rgba(0,0,0,0.4);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#600;">✕</div>
+      </div>
+    </div>
+    <div id="modal-content" style="padding:1.8rem 2rem;"></div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<section id="projects" class="sec rev">
+  <div class="sec-hdr">
+    <span class="sec-id">C:\PROJECTS\*.exe</span>
+    <h2>Projects that shipped insights.</h2>
+  </div>
+  <div class="proj-grid">
+
+    <div class="pc feat" onclick="openProject('job')" style="cursor:pointer;">
+      <div class="pthumb" style="background:var(--purple);color:var(--yellow);">JOB MARKET<br>ANALYSIS.EXE</div>
+      <div class="pbody">
+        <div class="pbar" style="background:var(--purple);margin:-0.95rem -1rem 0.7rem;border-radius:0;"><span class="pbar-t">job_market.sql</span><span class="pbar-x">↗</span></div>
+        <div class="ptitle">Job Market Analysis — Data Analytics Field</div>
+        <div class="pdesc">Analyzed large-scale job posting data using SQL and Vanna.AI to uncover salary trends, platform performance, and hiring patterns across the data analytics field.</div>
+        <div class="ptags"><span class="ptag">SQL</span><span class="ptag">Python</span><span class="ptag">Vanna.AI</span><span class="ptag">Looker Studio</span></div>
+      </div>
+    </div>
+
+    <div class="pc" onclick="openProject('essay')" style="cursor:pointer;">
+      <div class="pbar" style="background:var(--ink);"><span class="pbar-t">essay_assistant.py</span><span class="pbar-x">↗</span></div>
+      <div class="pthumb" style="background:var(--ink);color:var(--purple-lt);">STUDENT ESSAY<br>ASSISTANT</div>
+      <div class="pbody">
+        <div class="ptitle">Student Essay Assistant (Agentic AI)</div>
+        <div class="pdesc">Agentic AI pipeline using Zephyr-7B-Beta and RAG to deliver instant, structured essay feedback at scale.</div>
+        <div class="ptags"><span class="ptag">Google Collab</span><span class="ptag">Hugging Face</span><span class="ptag">Kaggle</span><span class="ptag">Python</span><span class="ptag">LLM</span></div>
+      </div>
+    </div>
+
+    <div class="pc" onclick="openProject('ibm')" style="cursor:pointer;">
+      <div class="pbar" style="background:var(--blue);"><span class="pbar-t">ibm_attrition.db</span><span class="pbar-x">↗</span></div>
+      <div class="pthumb" style="background:#D0DCFF;color:var(--blue);">IBM JOB<br>ATTRITION</div>
+      <div class="pbody">
+        <div class="ptitle">IBM Job Attrition Analysis</div>
+        <div class="pdesc">Predictive analytics on 1,470 IBM employees to uncover attrition drivers using logistic regression and correlation analysis.</div>
+        <div class="ptags"><span class="ptag">MongoDB</span><span class="ptag">PySpark</span><span class="ptag">Python</span></div>
+      </div>
+    </div>
+
+    <div class="pc" onclick="openProject('retail')" style="cursor:pointer;">
+      <div class="pbar" style="background:var(--red);"><span class="pbar-t">retail_insights.sql</span><span class="pbar-x">↗</span></div>
+      <div class="pthumb" style="background:#FFE8E8;color:var(--red);">SQL &amp; AI<br>RETAIL INSIGHTS</div>
+      <div class="pbody">
+        <div class="ptitle">SQL &amp; AI-Powered Retail Product Insights</div>
+        <div class="pdesc">Explored product revenue, category performance, and bestseller patterns using SQL queries and AI-powered dashboards.</div>
+        <div class="ptags"><span class="ptag">SQL</span><span class="ptag">Vanna.AI</span><span class="ptag">Looker Studio</span><span class="ptag">BigQuery</span></div>
+      </div>
+    </div>
+
+    <div class="pc" onclick="openProject('bike')" style="cursor:pointer;">
+      <div class="pbar" style="background:#5A3080;"><span class="pbar-t">bike_trends.ipynb</span><span class="pbar-x">↗</span></div>
+      <div class="pthumb" style="background:var(--purple-xlt);color:var(--purple-dk);">BIKE RENTAL<br>TRENDS</div>
+      <div class="pbody">
+        <div class="ptitle">Exploring Bike Rental Trends</div>
+        <div class="pdesc">Full Python EDA workflow uncovering how weather, seasons, and commute hours drive bike rental demand.</div>
+        <div class="ptags"><span class="ptag">Python</span><span class="ptag">Pandas</span><span class="ptag">Seaborn</span><span class="ptag">Matplotlib</span><span class="ptag">Jupyter</span></div>
+      </div>
+    </div>
+
+    <div class="pc" onclick="openProject('maita')" style="cursor:pointer;">
+      <div class="pbar" style="background:#C0007A;"><span class="pbar-t">maita_launch.pptx</span><span class="pbar-x">↗</span></div>
+      <div class="pthumb" style="background:#FFD6F0;color:#800050;">MAITÁ U.S.<br>LAUNCH CAMPAIGN</div>
+      <div class="pbody">
+        <div class="ptitle">Maitá's U.S. Launch Campaign</div>
+        <div class="pdesc">Full-funnel Instagram campaign strategy for a Brazilian skincare brand entering the US, projecting 20K-30K impressions and up to 2x ROAS.</div>
+        <div class="ptags"><span class="ptag">Meta Ads</span><span class="ptag">Instagram Insights</span><span class="ptag">Notion</span><span class="ptag">Canva</span></div>
+      </div>
+    </div>
+
+    <div class="pc" onclick="openProject('australis')" style="cursor:pointer;">
+      <div class="pbar" style="background:#005A78;"><span class="pbar-t">australis_bi.pbix</span><span class="pbar-x">↗</span></div>
+      <div class="pthumb" style="background:#D0F0FF;color:#003050;">AUSTRALIS<br>SOCIAL ANALYSIS</div>
+      <div class="pbody">
+        <div class="ptitle">Australis Cosmetics Social Media Analysis</div>
+        <div class="pdesc">Interactive Power BI dashboard analyzing 5 years of Facebook activity to identify content types, posting times, and emotional triggers that drove engagement.</div>
+        <div class="ptags"><span class="ptag">Power BI</span></div>
+      </div>
+    </div>
+
+    <div class="pc" onclick="openProject('covid')" style="cursor:pointer;">
+      <div class="pbar" style="background:#282828;"><span class="pbar-t">covid_vaccine.twbx</span><span class="pbar-x">↗</span></div>
+      <div class="pthumb" style="background:#2D2D2D;color:#E8E8E8;">COVID-19<br>VACCINE DIST.</div>
+      <div class="pbody">
+        <div class="ptitle">Covid-19 Vaccine Distribution Analysis</div>
+        <div class="pdesc">Visual analytics dashboard tracking how vaccine access shaped recovery outcomes globally, with fatality rates dropping from 40% to 11% post-rollout.</div>
+        <div class="ptags"><span class="ptag">Tableau</span><span class="ptag">Canva</span></div>
+      </div>
+    </div>
+
+    <div class="pc" onclick="openProject('superstore')" style="cursor:pointer;">
+      <div class="pbar" style="background:#3A7020;"><span class="pbar-t">superstore.twbx</span><span class="pbar-x">↗</span></div>
+      <div class="pthumb" style="background:#E5F5D0;color:#204010;">SUPERSTORE<br>SALES ANALYSIS</div>
+      <div class="pbody">
+        <div class="ptitle">Superstore Sales Analysis</div>
+        <div class="pdesc">Interactive Tableau dashboard revealing discount patterns, regional profitability gaps, and seasonal forecasting to guide smarter marketing decisions.</div>
+        <div class="ptags"><span class="ptag">Tableau</span></div>
+      </div>
+    </div>
+
+    <div class="pc" onclick="openProject('seo')" style="cursor:pointer;">
+      <div class="pbar" style="background:#806000;"><span class="pbar-t">seo_strategy.doc</span><span class="pbar-x">↗</span></div>
+      <div class="pthumb" style="background:#FFF3C0;color:#604000;">SEO GROWTH<br>STRATEGY</div>
+      <div class="pbody">
+        <div class="ptitle">SEO Growth Strategy for Immigration Pathways</div>
+        <div class="pdesc">12-month SEO strategy for an immigration tech startup targeting 300% traffic growth, 200K monthly impressions, and 2-4% conversion rates.</div>
+        <div class="ptags"><span class="ptag">Google Keyword Planner</span><span class="ptag">Figma</span><span class="ptag">Photoshop</span><span class="ptag">Canva</span></div>
+      </div>
+    </div>
+
+    <div class="pc" onclick="openProject('wellness')" style="cursor:pointer;">
+      <div class="pbar" style="background:#B05000;"><span class="pbar-t">digital_wellness.pptx</span><span class="pbar-x">↗</span></div>
+      <div class="pthumb" style="background:#FFE8D0;color:#6A3000;">DIGITAL WELLNESS<br>CAMPAIGN</div>
+      <div class="pbody">
+        <div class="ptitle">Digital Wellness Awareness Campaign</div>
+        <div class="pdesc">Multi-platform campaign to engage Gen Z and parents around healthier screen habits, with a $13K budget and projected 15K+ organic reach.</div>
+        <div class="ptags"><span class="ptag">Google Analytics</span><span class="ptag">Canva</span><span class="ptag">Google Keyword Planner</span></div>
+      </div>
+    </div>
+
+    <div class="pc" onclick="openProject('vrbo')" style="cursor:pointer;">
+      <div class="pbar" style="background:#2A5080;"><span class="pbar-t">vrbo_strategy.pptx</span><span class="pbar-x">↗</span></div>
+      <div class="pthumb" style="background:#D8EAF8;color:#1A3050;">VRBO<br>DIFFERENTIATION</div>
+      <div class="pbody">
+        <div class="ptitle">Vrbo Differentiation Strategy</div>
+        <div class="pdesc">Purpose-driven global expansion strategy connecting vacation rentals to UNESCO cultural heritage sites — 3rd place in school-wide competition.</div>
+        <div class="ptags"><span class="ptag">Canva</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills" class="sec rev">
+  <div class="sec-hdr">
+    <span class="sec-id">C:\SKILLS\tools.ini</span>
+    <h2>Tools &amp; Skills</h2>
+  </div>
+  <div class="legend">
+    <div class="lgd"><div class="lgd-dot" style="background:var(--purple);"></div> Proficient</div>
+    <div class="lgd"><div class="lgd-dot" style="background:var(--blue);"></div> Advanced</div>
+    <div class="lgd"><div class="lgd-dot" style="background:var(--yellow-lt);"></div> Intermediate</div>
+  </div>
+  <div class="skills-grid">
+    <div class="sk lp"><div class="sk-n">Tableau</div><div class="sk-l">PROFICIENT</div></div>
+    <div class="sk lp"><div class="sk-n">Canva</div><div class="sk-l">PROFICIENT</div></div>
+    <div class="sk lp"><div class="sk-n">SPSS</div><div class="sk-l">PROFICIENT</div></div>
+    <div class="sk lp"><div class="sk-n">Office Suite</div><div class="sk-l">PROFICIENT</div></div>
+    <div class="sk la"><div class="sk-n">Google Collab</div><div class="sk-l">ADVANCED</div></div>
+    <div class="sk la"><div class="sk-n">Excel (PHStat)</div><div class="sk-l">ADVANCED</div></div>
+    <div class="sk la"><div class="sk-n">Power BI</div><div class="sk-l">ADVANCED</div></div>
+    <div class="sk la"><div class="sk-n">Google Analytics</div><div class="sk-l">ADVANCED</div></div>
+    <div class="sk la"><div class="sk-n">Photoshop</div><div class="sk-l">ADVANCED</div></div>
+    <div class="sk la"><div class="sk-n">RAG / LLM Dev</div><div class="sk-l">ADVANCED</div></div>
+    <div class="sk la"><div class="sk-n">Looker Studio</div><div class="sk-l">ADVANCED</div></div>
+    <div class="sk li"><div class="sk-n">Hugging Face</div><div class="sk-l">INTERMEDIATE</div></div>
+    <div class="sk li"><div class="sk-n">Python</div><div class="sk-l">INTERMEDIATE</div></div>
+    <div class="sk li"><div class="sk-n">Meta Ads Manager</div><div class="sk-l">INTERMEDIATE</div></div>
+    <div class="sk li"><div class="sk-n">Smartsheet</div><div class="sk-l">INTERMEDIATE</div></div>
+    <div class="sk li"><div class="sk-n">MongoDB</div><div class="sk-l">INTERMEDIATE</div></div>
+    <div class="sk li"><div class="sk-n">LLM Development</div><div class="sk-l">INTERMEDIATE</div></div>
+    <div class="sk li"><div class="sk-n">SQL</div><div class="sk-l">INTERMEDIATE</div></div>
+    <div class="sk li"><div class="sk-n">Vanna.AI</div><div class="sk-l">INTERMEDIATE</div></div>
+    <div class="sk li"><div class="sk-n">VS Code</div><div class="sk-l">INTERMEDIATE</div></div>
+  </div>
+</section>
+
+
+<!-- EXPERIENCE -->
+<section id="experience" class="sec rev">
+  <div class="sec-hdr">
+    <span class="sec-id">C:\WORK\experience.doc</span>
+    <h2>Professional Experience</h2>
+  </div>
+  <div class="exp-list">
+    <div class="ec">
+      <div class="ec-side"><div class="ec-co">International Wildlife Rehabilitation Council</div><div class="ec-pd">Sep 2025 · Present</div><div class="ec-pd" style="color:var(--yellow-lt);margin-top:0.3rem;">San Francisco, CA</div></div>
+      <div class="ec-main">
+        <div class="ec-role">Marketing &amp; Analytics Associate</div>
+        <div class="ec-desc">Responsible for data-driven marketing initiatives supporting global education programs. Managed the content calendar, wrote multi-channel social media content, and built KPI dashboards to track engagement and reach. Led audience segmentation and performance analysis, resulting in more targeted messaging and improved campaign effectiveness across a global product launch.</div>
+      </div>
+    </div>
+    <div class="ec">
+      <div class="ec-side"><div class="ec-co">Oral Unic Dental Clinic</div><div class="ec-pd">May 2023 · Apr 2024</div><div class="ec-pd" style="color:var(--yellow-lt);margin-top:0.3rem;">Brazil</div></div>
+      <div class="ec-main">
+        <div class="ec-role">Data &amp; Marketing Analyst</div>
+        <div class="ec-desc">Analyzed paid media performance and delivered monthly KPI reports (ROAS, CPL, lead quality) across multiple clinics. Managed budget allocation, channel testing, and campaign governance for 7 teams. Reduced cost per lead by 60% in six months and standardized reporting practices that improved cross-team visibility and decision-making.</div>
+      </div>
+    </div>
+    <div class="ec">
+      <div class="ec-side"><div class="ec-co">Maita Cosmetics</div><div class="ec-pd">Nov 2022 · Apr 2024</div><div class="ec-pd" style="color:var(--yellow-lt);margin-top:0.3rem;">Brazil</div></div>
+      <div class="ec-main">
+        <div class="ec-role">Marketing Manager</div>
+        <div class="ec-desc">Developed marketing strategies, managed publicity campaigns, and coordinated events and brand activations. Conducted market research with 80+ participants to identify positioning opportunities. Built financial models to support pricing decisions and led a data-driven brand launch with influencer coordination and performance tracking.</div>
+      </div>
+    </div>
+    <div class="ec">
+      <div class="ec-side"><div class="ec-co">Excel Accounting Consulting</div><div class="ec-pd">Apr 2016 · Jan 2023</div><div class="ec-pd" style="color:var(--yellow-lt);margin-top:0.3rem;">Brazil</div></div>
+      <div class="ec-main">
+        <div class="ec-role">Finance &amp; Operations Analyst</div>
+        <div class="ec-desc">Managed financial reporting, budgeting, and operational workflows for a portfolio of 30+ residential properties. Responsible for billing, monthly accounting reports, and stakeholder presentations. Built an automated reporting system in Google Sheets that saved 120+ hours per year and improved operational efficiency by 67%.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- EDUCATION -->
+<section id="education" class="sec rev">
+  <div class="sec-hdr">
+    <span class="sec-id">C:\EDUCATION\degrees.exe</span>
+    <h2>Academic Background</h2>
+  </div>
+  <div class="edu-grid">
+    <div class="edu">
+      <div class="edu-bar">★ MASTER'S</div>
+      <div class="edu-bd">
+        <div class="edu-yr">2025</div>
+        <div class="edu-sc">Hult International Business School</div>
+        <div class="edu-dg">MSc Marketing &amp; Analytics · San Francisco, CA</div>
+        <div class="edu-bs">
+          <div class="edu-b">★ 3rd — Expedia Group Business Challenge</div>
+          <div class="edu-b">★ Dean's List Certificate</div>
+        </div>
+      </div>
+    </div>
+    <div class="edu">
+      <div class="edu-bar">★ MBA</div>
+      <div class="edu-bd">
+        <div class="edu-yr">2024</div>
+        <div class="edu-sc">Universidade do Vale do Itajaí</div>
+        <div class="edu-dg">MBA in Digital Marketing · Santa Catarina, BR</div>
+        <div class="edu-bs"><div class="edu-b">Specialized in digital strategy &amp; analytics</div></div>
+      </div>
+    </div>
+    <div class="edu">
+      <div class="edu-bar">★ BACHELOR'S</div>
+      <div class="edu-bd">
+        <div class="edu-yr">2021</div>
+        <div class="edu-sc">Universidade do Vale do Itajaí</div>
+        <div class="edu-dg">Bachelor of Business Administration · Santa Catarina, BR</div>
+        <div class="edu-bs">
+          <div class="edu-b">★ 1st place Hackathon (25-member team lead)</div>
+          <div class="edu-b">★ 2nd place Applied Social Science presentation</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" class="rev">
+  <div style="position:relative;z-index:2;">
+    <div class="sec-hdr" style="justify-content:center;">
+      <span class="sec-id">C:\CONTACT\connect.exe</span>
+      <h2>Let's work together.</h2>
+    </div>
+    <p class="c-tag">Open to Marketing Analyst, Data Analyst &amp; Growth roles in the US ★</p>
+    <div class="c-links">
+      <a href="mailto:annaccorrea1@hotmail.com" class="cbtn prim">✉ Email me</a>
+      <a href="Mkt_Analytics_CV.pdf" download class="cbtn" style="background:var(--yellow);color:var(--ink);border-color:var(--ink);">↓ Download Resume</a>
+      <a href="https://linkedin.com/in/annaccorrea" target="_blank" class="cbtn">in LinkedIn</a>
+      <a href="tel:+14156725816" class="cbtn">☎ +1 (415) 672-5816</a>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <span>★ ANNA CORREA · PORTFOLIO.EXE · 2025 ★</span>
+  <span>SAN FRANCISCO, CA · OPEN TO WORK</span>
+</footer>
+
+<script>
+  // Projects data
+  const projects = {
+    job: {
+      file: 'job_market.sql', bar: '#7B4FD4',
+      title: 'Job Market Analysis',
+      subtitle: 'Big Data Workflows in AI-Powered Business Analytics · Jul 2025',
+      tools: ['SQL','Python','Vanna.AI','Looker Studio'],
+      challenge: 'How can we use large-scale job market data and AI-powered tools to uncover actionable insights about salaries, job types, platforms, and hiring patterns in the data analytics field?',
+      solution: 'We analyzed a large dataset of job postings using SQL and Vanna.AI to uncover trends across roles, salaries, platforms, and work types. I contributed to company-level hiring analysis and platform salary comparisons, translating SQL results into clear strategic insights. The final report combined visual dashboards and contextual interpretation to support job search decision-making.',
+      findings: ['Mid-level roles dominate job availability, while junior and lead positions remain limited.','Data Engineers earn the highest salaries, but Data Analysts offer more accessible entry points.','LinkedIn, Upwork, and San Francisco emerged as key platforms and hubs balancing volume and pay.'],
+      impact: 'Our findings helped align career strategies with data-backed market patterns.'
+    },
+    essay: {
+      file: 'essay_assistant.py', bar: '#1A0A3B',
+      title: 'Student Essay Assistant (Agentic AI)',
+      subtitle: 'AI in Coding: Building and Managing a LLM Solution · Jul 2025',
+      tools: ['Google Collab','Hugging Face','Kaggle','Python','LLM'],
+      challenge: 'How can we design and implement an Agentic AI system that solves a real-world business challenge using open-source language models?',
+      solution: 'Our team focused on the problem of manual essay review in education — a process that is slow, subjective, and difficult to scale. We developed an Agentic AI tool using the Zephyr-7B-Beta model from Hugging Face to analyze student essays automatically. We deployed the solution via the text2text-generation pipeline in Python, using the StudentsPerformance.csv dataset from Kaggle. The system delivered structured and personalized feedback in seconds.',
+      findings: ['Delivered instant, structured feedback replicating the role of a human writing coach.','Scaled effectively across diverse essay topics using a single well-engineered prompt.','Showcased strong potential for AI integration in learning platforms and grading workflows.'],
+      impact: 'This agentic AI demonstrates how open-source models can solve real EdTech challenges.'
+    },
+    ibm: {
+      file: 'ibm_attrition.db', bar: '#2D4BFF',
+      title: 'IBM Job Attrition Analysis',
+      subtitle: 'Data Mining with MySQL, NoSQL, Hadoop, Spark and Hive · Jun 2025',
+      tools: ['MongoDB','PySpark','Python'],
+      challenge: 'How can we use predictive analytics to uncover the key drivers of employee attrition and help companies retain top talent?',
+      solution: 'Our team analyzed HR data from 1,470 IBM employees using MongoDB and PySpark to detect patterns in employee turnover. We explored correlations between overtime, income, tenure, and commute distance to identify high-risk attrition profiles. I contributed to extracting insights from exploratory analysis and logistic regression modeling, highlighting the disproportionate impact of overtime and the protective effect of job level and income. The final report combined statistical findings with business-focused recommendations.',
+      findings: ['Identified overtime as the top predictor of attrition.','Showed that lower salary, shorter tenure, and longer commutes increase turnover risk.','Recommended HR strategies like career paths, flexible shifts, and predictive monitoring.'],
+      impact: 'The project revealed how overtime, compensation, and tenure combine to shape attrition risk, informing clear, data-backed retention strategies.'
+    },
+    retail: {
+      file: 'retail_insights.sql', bar: '#E8213A',
+      title: 'SQL & AI-Powered Retail Product Insights',
+      subtitle: 'Big Data Workflows in AI-Powered Business Analytics · Jun 2025',
+      tools: ['SQL','Vanna.AI','Looker Studio','BigQuery (Google Cloud)'],
+      challenge: 'How can we use product-level retail data to uncover strategic insights about pricing, category performance, and bestseller patterns?',
+      solution: 'I explored a large dataset of retail products to identify patterns in revenue, rating, and review volume across different categories and subcategories. Using SQL queries and visualizations, I examined high and low-performing items, compared bestsellers vs. non-bestsellers, and analyzed how product type, price range, and review count influence overall revenue. I designed five core insights to guide retail decision-making from product mix optimization to pricing strategy.',
+      findings: ['Identified Kitchen & Dining and Nespresso Capsules as top revenue sources despite lower product counts.','Revealed that both high-ticket electronics and low-cost daily items can be strategic revenue drivers.','Found that "Bestseller" status has minimal revenue impact, shifting focus to pricing and visibility balance.'],
+      impact: 'Uncovered key product, category, and pricing patterns to optimize retail strategy using SQL and AI-powered tools.'
+    },
+    bike: {
+      file: 'bike_trends.ipynb', bar: '#5A3080',
+      title: 'Exploring Bike Rental Trends',
+      subtitle: 'Introduction to Python · May 2025',
+      tools: ['Python','Pandas','Seaborn','Matplotlib','Jupyter Notebook'],
+      challenge: 'How can we identify the key factors that influence bike rental demand and translate raw environmental data into actionable business strategies?',
+      solution: 'This project involved a complete data analysis workflow using Python to uncover patterns in a real bike rental dataset. Through data cleaning, feature transformation, and exploratory analysis, I investigated how weather conditions, seasons, hours of the day, and holidays affect user behavior. Using boxplots, scatter plots, pointplots, and correlation matrices, I identified strong relationships between temperature, dew point, time of day, and bike rental volumes.',
+      findings: ['Identified comfort-related conditions as top demand drivers.','Revealed strong demand cycles tied to commute hours, especially 8am and 6pm.','Provided strategic recommendations for seasonal fleet management and targeted promotions.'],
+      impact: 'The analysis turned complex patterns into actionable recommendations for user-focused operations.'
+    },
+    maita: {
+      file: 'maita_launch.pptx', bar: '#C0007A',
+      title: "Maitá's U.S. Launch Campaign",
+      subtitle: 'Business Challenge · Apr 2025',
+      tools: ['Meta Ads Manager','Instagram Insights','Notion','Canva'],
+      challenge: 'How do you build emotional connection and brand awareness for a sustainable beauty brand entering a new market?',
+      solution: "I created a full-funnel Instagram campaign to introduce Maitá's Yerba Mate skincare collection to the US, focusing on blending cultural storytelling with wellness-driven beauty trends. I contributed to campaign strategy, creative copywriting, content planning, KPI-setting, and product selection. We started by analyzing Maitá's existing performance data in Brazil and used audience insights, Meta benchmarks, and cosmetic brand case studies to guide targeting, positioning, and expected engagement metrics.",
+      findings: ['Aligned platform and content strategy with skincare trends using benchmark and audience data.','Developed Story ads and Carousels, each aligned with top-performing beauty formats.','Projected 20K-30K impressions, 3-5% engagement rate, and ROAS of up to 2x based on strategic ad spend.'],
+      impact: 'This campaign blueprint combined cultural relevance, platform insights, and strategic KPIs to lay the foundation for a data-driven US market entry.'
+    },
+    australis: {
+      file: 'australis_bi.pbix', bar: '#005A78',
+      title: 'Australis Cosmetics Social Media Analysis',
+      subtitle: 'Data Visualization · Apr 2025',
+      tools: ['Power BI'],
+      challenge: "What type of content fueled Australis' social media growth from 2012 to 2017, and how can we use that data to guide future strategy?",
+      solution: 'I created an interactive Power BI dashboard analyzing 5 years of Facebook activity during a key growth phase. The dataset tracked engagement through likes, shares, comments, and emotional reactions. I translated raw post and comment data into strategic insights, spotlighting the most engaging content types, ideal posting times, and emotional triggers.',
+      findings: ['Encourages decisions rooted in historical success.','Identifies high-performing post types and optimal publishing windows.','Reveals emotional reactions that guide tone and messaging.'],
+      impact: 'The dashboard served as a storytelling tool, revealing patterns that could shape stronger future campaigns.'
+    },
+    covid: {
+      file: 'covid_vaccine.twbx', bar: '#282828',
+      title: 'Covid-19 Vaccine Distribution Analysis',
+      subtitle: 'Data Visualization · Mar 2025',
+      tools: ['Tableau','Canva'],
+      challenge: 'How can data storytelling help us understand the impact of vaccine distribution, response timing, and public health communication during a global crisis?',
+      solution: 'My team and I designed a visual analytics dashboard that explored how COVID-19 spread, where fatalities surged, and how vaccine access shaped recovery. By analyzing cases, deaths, recovery, and vaccination rates across countries, we uncovered sharp disparities in outcomes, especially where vaccination rollout was slow or uneven. We used filters, time sliders, and forecasting to turn complex data into relevant insights.',
+      findings: ['Fatality rates dropped from 40% pre-vaccine to 11% by 2022.','Rapid vaccine rollouts led to 96%+ coverage, while slower efforts stalled at just 35%.','Higher vaccination rates correlated with stronger recovery, proving that vaccines saved lives.'],
+      impact: 'The dashboard allows viewers to connect trends with real-world consequences and urgent solutions.'
+    },
+    superstore: {
+      file: 'superstore.twbx', bar: '#3A7020',
+      title: 'Superstore Sales Analysis',
+      subtitle: 'Data Visualization · Mar 2025',
+      tools: ['Tableau'],
+      challenge: 'What can discounting patterns, regional sales data, and product-level profitability tell us about where and how to grow smarter?',
+      solution: 'I built an interactive Tableau dashboard to explore how sales, profit, discounts, and returns intersect across US states, product categories, and time. Built-in filters made the data view dynamic and interpretation fast and intuitive. By identifying underperforming regions and categories and revealing clusters where high discounts led to low profit, the dashboard illustrated opportunities to refine discounting strategies, campaign timing, and category messaging. The project also included forecasting components to demonstrate profit volatility and seasonality.',
+      findings: ['Identified categories with high discount and return rates.','Pinpointed states with low profitability and high discount clusters, ideal for marketing adjustments.','Forecasted seasonal sales trends and profit volatility.'],
+      impact: 'The project demonstrated how interactive dashboards can turn raw sales data into targeted growth strategies.'
+    },
+    seo: {
+      file: 'seo_strategy.doc', bar: '#806000',
+      title: 'SEO Growth Strategy for Immigration Pathways',
+      subtitle: 'Business Challenge · Feb 2025',
+      tools: ['Google Keyword Planner','Figma','Photoshop','Canva'],
+      challenge: 'How can an early-stage immigration tech startup grow organic visibility, reach new audiences, and drive qualified conversions?',
+      solution: 'To help Immigration Pathways prepare for its website launch, my team and I built a 12-month SEO strategy focused on keyword-rich content, user education, and automation. We conducted a full draft website audit, selected 10+ high-intent keywords, and crafted content plans for blog articles, email flows, FAQs, and social media. This approach aimed to boost trust, improve discoverability, and guide users from search to conversion with empathy and precision.',
+      findings: ['US immigration keywords average 100K+ monthly searches.','Long-form blog content generates 55% more clicks than ads.','SEO drives 53% of website traffic for service-based startups.'],
+      impact: 'With a goal of 300% traffic growth, 200K monthly impressions, and 2-4% conversion rates, we set a strong foundation for long-term, sustainable audience acquisition.'
+    },
+    wellness: {
+      file: 'digital_wellness.pptx', bar: '#B05000',
+      title: 'Digital Wellness Awareness Campaign',
+      subtitle: 'Digital Marketing · Feb 2025',
+      tools: ['Google Analytics','Canva','Google Keyword Planner'],
+      challenge: 'How can we engage parents and young adults with healthier screen habits, without losing them to the next scroll?',
+      solution: 'Our team launched a multi-platform campaign designed to raise digital self-awareness in a way that felt relatable, not preachy. We built SEO and SEM strategies around high-intent keywords, and crafted Instagram, TikTok, and Facebook content tailored to digital-native behavior. Using Reels, polls, carousels, and influencer engagement, we turned abstract wellness into practical, scroll-stopping action.',
+      findings: ['Gen Z averages almost 8 hours of daily screen time.','Excessive screen time is linked to increased risks of depression, anxiety, and other mood disorders.','Campaigns with relatability earn up to 70% more interaction.'],
+      impact: 'With a $13K budget and a projected 15K+ organic reach, 4-6% CTR, and 8-10% engagement rates, we made attention our main KPI.'
+    },
+    vrbo: {
+      file: 'vrbo_strategy.pptx', bar: '#2A5080',
+      title: 'Vrbo Differentiation Strategy',
+      subtitle: 'Business Challenge · Dec 2024',
+      tools: ['Canva'],
+      challenge: 'Looking at the supply perspective, how can Vrbo differentiate itself from competitors in markets outside of the US?',
+      solution: 'To help Vrbo stand out globally, my team and I created a purpose-driven expansion strategy that connects vacation rentals to cultural heritage sites. We proposed allocating 30% of booking revenue to preserve UNESCO sites, turning unique stays into powerful stories. We gave Vrbo a way to inspire meaningful travel, attract new audiences, and build long-term brand loyalty through cultural impact.',
+      findings: ['UNESCO has 1,200+ listed sites worldwide.','Heritage and Cultural Sites have a market size of $600B+ and a CAGR of 1% per year.','Cultural Heritage Tours have a 55.62% market share.'],
+      impact: '3rd place in school-wide competition. The strategy tackled market growth, differentiation, and projected profit boom through purpose-led positioning.'
+    }
+  };
+
+  function openProject(id) {
+    const p = projects[id];
+    if (!p) return;
+    document.getElementById('modal-bar').style.background = p.bar;
+    document.getElementById('modal-bar-title').textContent = p.file;
+    document.getElementById('modal-content').innerHTML = `
+      <div style="margin-bottom:1.5rem;">
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;font-weight:700;letter-spacing:-0.02em;margin-bottom:0.3rem;">${p.title}</h2>
+        <div style="font-family:'VT323',monospace;font-size:0.95rem;color:var(--mid);letter-spacing:0.05em;">${p.subtitle}</div>
+        <div style="display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:0.8rem;">${p.tools.map(t=>`<span style="font-family:'VT323',monospace;font-size:0.88rem;padding:0.1rem 0.5rem;border:1.5px solid var(--ink);border-radius:2px;background:var(--purple-xlt);color:var(--purple-dk);">${t}</span>`).join('')}</div>
+      </div>
+      <div style="margin-bottom:1.3rem;">
+        <div style="font-family:'VT323',monospace;font-size:1rem;color:var(--purple);letter-spacing:0.08em;margin-bottom:0.5rem;">★ CHALLENGE</div>
+        <div style="border-left:3px solid var(--purple);padding-left:1rem;font-size:0.9rem;line-height:1.7;color:var(--mid);font-style:italic;">${p.challenge}</div>
+      </div>
+      <div style="margin-bottom:1.3rem;">
+        <div style="font-family:'VT323',monospace;font-size:1rem;color:var(--purple);letter-spacing:0.08em;margin-bottom:0.5rem;">★ SOLUTION</div>
+        <div style="font-size:0.88rem;line-height:1.75;color:#444;">${p.solution}</div>
+      </div>
+      <div style="margin-bottom:1rem;">
+        <div style="font-family:'VT323',monospace;font-size:1rem;color:var(--purple);letter-spacing:0.08em;margin-bottom:0.6rem;">★ WHAT WE FOUND</div>
+        ${p.findings.map(f=>`<div style="background:var(--purple-xlt);border-left:3px solid var(--purple);padding:0.55rem 0.8rem;margin-bottom:0.4rem;font-size:0.83rem;line-height:1.6;border-radius:0 3px 3px 0;">${f}</div>`).join('')}
+      </div>
+      <div style="background:var(--ink);color:var(--yellow);padding:0.8rem 1rem;border-radius:3px;font-family:'VT323',monospace;font-size:1rem;letter-spacing:0.05em;line-height:1.5;">★ IMPACT: ${p.impact}</div>
+    `;
+    document.getElementById('modal-overlay').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+
+  document.getElementById('modal-close').onclick = function() {
+    document.getElementById('modal-overlay').style.display = 'none';
+    document.body.style.overflow = '';
+  };
+  document.getElementById('modal-overlay').onclick = function(e) {
+    if (e.target === this) {
+      this.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+  };
+</script>
+<script>
+  function tick(){
+    const n=new Date();
+    document.getElementById('clk').textContent=String(n.getHours()).padStart(2,'0')+':'+String(n.getMinutes()).padStart(2,'0');
+  }
+  tick(); setInterval(tick,10000);
+  const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on');});},{threshold:0.07});
+  document.querySelectorAll('.rev').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
